@@ -9,11 +9,11 @@ function HomePage(props) {
     return <div>{JSON.stringify(data)}</div>
   }
 
-  export const getStaticProps = async () => {
-    const users = await db.collection("users").get()
-    
-    const usersData = users.docs.map(u => u.data())
-    return {props: {usersData}}
-  }
+export const getStaticProps = async () => {
+  const users = await db.collection("users").get()
+  
+  const usersData = users.docs.map(u => u.data())
+  return {props: {usersData}}
+}
   
 export default HomePage
